@@ -1,2 +1,2 @@
 # cogsup-prog
-things from programming class and experimental approach
+Things from programming class and experimental approach
