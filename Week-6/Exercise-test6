@@ -17,13 +17,46 @@ LATERAL_OFFSET = 300
 square =  stimuli.Rectangle(size=(STIMSIZE, STIMSIZE), colour=RED,  position=(-LATERAL_OFFSET, 0))
 circle = stimuli.Circle(radius=STIMSIZE // 2, colour=RED, position=(LATERAL_OFFSET, 0))
 
+# Definir os blocos
+N_BLOCKS = 2
+N_TRIALS_IN_BLOCK = 16
+
+block_one = design.Experiment.Block(name="My first block")
+trial_one = design.Experiment.Trial()
+stim = design.Experiment.stimuli.TextLine(text="Stimuli")
+stim.preload()
+trial_one.add_stimulus(circle)
+trial_two = design.Experiment.Trial()
+stim = design.Experiment.stimuli.TextLine(text="Stimuli")
+trial_two.add_stimulus(square)
+block_one.add_trial(trial_one)
+block_one.add_trial(trial_two)
+exp.add_block(block_one)
+
+block_two = design.Experiment.Block(name="My second block")
+trial_one = design.Experiment.Trial()
+stim = design.Experiment.stimuli.TextLine(text="Stimuli")
+stim.preload()
+trial_one.add_stimulus(circle)
+trial_two = design.Experiment.Trial()
+stim = design.Experiment.stimuli.TextLine(text="Stimuli")
+trial_two.add_stimulus(square)
+block_two.add_trial(trial_one)
+block_two.add_trial(trial_two)
+exp.add_block(block_two)
+
 # Para salvar tempo
 square.preload()
 circle.preload()
 
 # Começa o experimento
 control.start(subject_id=1)
-
+for block in exp.blocks:
+    for trial in block.trials:
+        trial.stimuli[0].present()
+        key, rt = exp.keyboard.wait([design.Experiment.misc.constants.K_LEFT,
+                                     design.Experiment.misc.constants.K_RIGHT])
+        exp.data.add([block.name, trial.id, key, rt])
 # Apresentar os stimulus que vão aparecer
 square.present(clear=True, update=False)
 circle.present(clear=False, update=True)
@@ -33,7 +66,5 @@ rt = 1000 # placeholder for reaction time
 
 exp.data.add([rt]) # add row data
 
-# Experiment conduction
-# Loop over blocks and trials, present stimuli and get user input
 # Finalizar o experimento
 control.end()

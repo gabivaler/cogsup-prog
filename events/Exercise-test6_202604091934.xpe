@@ -1,0 +1,10 @@
+#Expyriment 1.0.0 (Python 3.13.7), .xpe-file, coding: cp1252
+#date: Thu Apr 09 2026 19:34:59
+#sha1: cf42c0
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='LAPTOP-M3RDS1QG', release='11', version='10.0.26200', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+500,stderr,received,'Traceback (most recent call last):'
+501,stderr,received,'  File "c:\\Users\\gvpic\\Assignments\\Week-6\\Exercise-test6", line 15, in <module>\n    block_one = expyriment.design.Block(name="My first block")\n                ^^^^^^^^^^'
+501,stderr,received,"NameError: name 'expyriment' is not defined"
