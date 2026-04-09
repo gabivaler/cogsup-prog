@@ -1,0 +1,26 @@
+from expyriment import design, control, stimuli
+exp = design.Experiment(name="doble squares")
+control.initialize(exp)
+square_size = (50, 50)
+left_square = stimuli.Rectangle(
+size=square_size,
+colour=(0, 0, 255),
+position=(-100, 0)
+)
+right_square = stimuli.Rectangle(
+size=square_size,
+colour=(127, 127, 127),
+position=(100, 0)
+)
+exp.clock.wait(1000)
+left_square.present(clear=True, update=False)
+right_square.present(clear=False, update=True)
+# Distance to travel = Initial distance between objects
+displacement_x = 400
+# Set speed
+step_size = 10 # pixels per update
+# Move left square until collision
+while right_square.position[0] - left_square.position[0] < square_length:
+left_square.move((step_size, 0)) # (move-x, move-y)
+# Don’t forget to update the screen!
+

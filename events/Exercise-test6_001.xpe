@@ -1,16 +1,16 @@
 #Expyriment 1.0.0 (Python 3.13.7), .xpe-file, coding: cp1252
-#date: Thu Apr 09 2026 19:02:26
+#date: Thu Apr 09 2026 19:11:43
 #sha1: 0a6b33
 #modules: 
 #display: size=(800, 600), window_mode=True, opengl=2
 #os: uname_result(system='Windows', node='LAPTOP-M3RDS1QG', release='11', version='10.0.26200', machine='AMD64')
 Time,Type,Event,Value,Detail,Detail2
-2329,design,log,
+5694,design,log,
 #design: #exp: Ola
 #design: block_cnt,block_id,trial_cnt,trial_id
-2329,design,logged,
-2329,Experiment,started
-2329,Stimulus,presented,0
-2330,Stimulus,presented,1
-4330,Experiment,ended
-4335,Data,saved
+5694,design,logged,
+5694,Experiment,started
+5695,Stimulus,presented,0
+5708,Stimulus,presented,1
+7708,Experiment,ended
+7712,Data,saved
