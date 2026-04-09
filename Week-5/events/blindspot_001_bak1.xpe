@@ -1,0 +1,16 @@
+#Expyriment 1.0.0 (Python 3.13.7), .xpe-file, coding: cp1252
+#date: Thu Apr 09 2026 17:13:58
+#sha1: d06825
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='LAPTOP-M3RDS1QG', release='11', version='10.0.26200', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+13188,design,log,
+#design: #exp: Blindspot
+#design: block_cnt,block_id,trial_cnt,trial_id
+13188,design,logged,
+13188,Experiment,started
+13203,Stimulus,presented,0
+13205,Stimulus,presented,1
+16577,Keyboard,received,32,wait
+16579,Experiment,ended

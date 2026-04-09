@@ -1,0 +1,10 @@
+#Expyriment 1.0.0 (Python 3.13.7), .xpe-file, coding: cp1252
+#date: Thu Apr 09 2026 18:17:55
+#sha1: cb59d1
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='LAPTOP-M3RDS1QG', release='11', version='10.0.26200', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+700,stderr,received,'Traceback (most recent call last):'
+701,stderr,received,'  File "c:\\Users\\gvpic\\Assignments\\Week-5\\Exercise-test", line 14, in <module>\n    RED = misc.constants.C_RED\n          ^^^^'
+701,stderr,received,"NameError: name 'misc' is not defined"

@@ -1,0 +1,36 @@
+from expyriment import design, control, stimuli, misc
+
+#Para criar um experimento e nomear ele "Ola"
+exp = design.Experiment (name="Ola")
+#evitar modo de tela inteira and usar5 janela pequena para desenvolver
+control.set_develop_mode()
+
+# começar o experimento
+control.initialize(exp)
+
+# Definir os parametros
+STIMSIZE = 100
+RED = misc.constants.C_RED
+LATERAL_OFFSET = 300
+
+# Create stimuli (and put them into trials)
+square =  stimuli.Rectangle(size=(STIMSIZE, STIMSIZE), colour=RED,  position=(-LATERAL_OFFSET, 0))
+circle = stimuli.Circle(radius=STIMSIZE // 2, colour=RED, position=(LATERAL_OFFSET, 0))
+
+# Para salvar tempo
+square.preload()
+circle.preload()
+
+# Começa o experimento
+control.start()
+
+# Apresentar os stimulus que vão aparecer
+square.present(clear=True, update=False)
+circle.present(clear=False, update=True)
+
+exp.clock.wait(2000)
+
+# Experiment conduction
+# Loop over blocks and trials, present stimuli and get user input
+# Finalizar o experimento
+control.end()
